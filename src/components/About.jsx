@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import {Appcontext} from "../App"
+import { motion } from "framer-motion";
 const About = () => {
   const {data}=useContext(Appcontext)
   const info = [
@@ -10,31 +11,31 @@ const About = () => {
   return (
     <section id="about" className="py-10 text-white">
       <div className="text-center mt-8">
-        <h3 className="text-4xl font-semibold">
-          About <span className="text-cyan-600">Me</span>
-        </h3>
-        <p className="text-gray-400 my-3 text-lg">My introduction</p>
+        <motion.h3 initial={{opacity:0 ,y:100}} whileInView={{opacity:1,y:0}} transition={{duration:.5}} className="text-4xl font-semibold">
+          About <span className="text-green-800">Me</span>
+        </motion.h3>
+        <motion.p initial={{opacity:0 }} whileInView={{opacity:1}} transition={{duration:.7}} className="text-gray-400 my-3 text-lg">My introduction</motion.p>
         <div className="flex md:flex-row flex-col-reverse items-center md:gap-6 gap-12 px-10 max-w-6xl mx-auto">
           <div className="p-2">
             <div className="text-gray-300 my-3">
-             {data && <p className="text-justify leading-7 w-11/12 mx-auto ">
+             {data && <motion.p initial={{opacity:0}} whileInView={{opacity:1}} transition={{ duration:0.5}} className="text-justify leading-7 w-11/12 mx-auto ">
                 {data.about.description}
-              </p>} 
+              </motion.p>} 
               <div className="flex mt-10 items-center gap-7">
                 {info.map((content) => (
-                  <div key={content.text}>
+                  <motion.div initial={{opacity:0 ,y:-100}} whileInView={{opacity:1 , y:0}} transition={{ duration:0.5,staggerChildren:0.1}} key={content.text}>
                     <h3 className="md:text-4xl text-2xl font-semibold text-white">
                       {content.count}
-                      <span className="text-cyan-600">+</span>{" "}
+                      <span className="text-green-800">+</span>{" "}
                     </h3>
                     <span className="md:text-base text-xs">{content.text}</span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
               <br />
               <br />
               <a href="#" download>
-                <button className="btn-primary">Download CV</button>
+                <button className="btn-primary  hover:bg-white hover:text-black ease-in duration-300">Download CV</button>
               </a>
             </div>
           </div>
@@ -43,7 +44,7 @@ const About = () => {
               {data && <img
                 src={data.about.avatar.url}
                 alt=""
-                className="w-full object-cover bg-cyan-600 rounded-xl"
+                className="w-full object-cover bg-green-400 rounded-xl"
               />}
             </div>
           </div>
