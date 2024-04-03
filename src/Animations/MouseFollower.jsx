@@ -94,9 +94,7 @@ export default function MouseFollower() {
 }
 
 
-// git remote add origin https://github.com/sidmuzammil/strating.git
-// git branch -M main
-// git push -u origin main
+
 
 
 
