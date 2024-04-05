@@ -13,7 +13,7 @@ const Skills = () => {
         </motion.h3>
         <motion.p initial={{opacity:0 }} whileInView={{opacity:1}} transition={{duration:.7}} className="text-gray-400 mt-3 text-lg">My knowledge</motion.p>
       <div className="flex items-center justify-center mt-12 gap-10 flex-wrap">
-          {data && data.skills.map((skill, i) => (
+          {data?.skills.filter(skill => skill.enabled === "true")  && data.skills.map((skill, i) => (
             <motion.div
               initial={{scale:1,opacity:0,y:-100}}
               whileInView={{opacity:1,y:0}}

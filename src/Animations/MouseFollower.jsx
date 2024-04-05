@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 import { useEffect, useState } from "react";
 import {
   motion,
@@ -92,16 +84,3 @@ export default function MouseFollower() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -22,8 +22,14 @@ body {
 }
 
 .aboutImg::after {
-  @apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-green-400 -z-10;
+  @apply content-[''] w-full left-0 top-0 rounded-xl rotate-12 h-full absolute bg-green-400 -z-10  transition-transform duration-300 ;
+  
 }
+
+.aboutImg:hover::after {
+  transform: rotate(0deg); 
+}
+
 
 .swiper-pagination-bullet {
   @apply bg-white; 
